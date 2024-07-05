@@ -1,9 +1,8 @@
 const mongoose = require("mongoose");
+const config = require("config");
 
 mongoose
-  .connect(
-    "mongodb+srv://junedk1110:gxmBoTmX12TP1WFB@cluster0.x3sbjs3.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
-  )
+  .connect(`${config.get("MONGODB_URI")}/celestia`)
   .then(function () {
     console.log("connected");
   })
